@@ -1,7 +1,7 @@
 import os
 import pygame
 
-from settings import IMAGE_DIRECTORY, PLAYER_ICONS_DIR, CARD_HEIGHT, CARD_WIDTH
+from settings import IMAGE_DIRECTORY, PLAYER_ICONS_DIR, SOUND_DIRECTORY, CARD_HEIGHT, CARD_WIDTH
 from data import CARDS, PLAYER_ICONS
 
 
@@ -18,3 +18,8 @@ def load_player_icons():
         image = pygame.image.load(image_path)
         player_images.append(image)
     return player_images
+
+
+def load_track(track):
+    track_path = os.path.join(SOUND_DIRECTORY, track)
+    pygame.mixer.music.load(track_path)
